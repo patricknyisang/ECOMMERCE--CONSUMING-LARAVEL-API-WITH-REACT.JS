@@ -1,0 +1,244 @@
+/* General reset and styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 200px; /* Width of sidebar */
+    background-color: #2c3e50; /* Dark blue background */
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full height of the viewport */
+    transition: transform 0.3s ease;
+    z-index: 100;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+    color: #ecf0f1;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    flex: 1; /* Allow sidebar items to take remaining space */
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li:hover {
+    background-color: #34495e;
+}
+
+/* Topbar styling */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #2980b9;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Full width */
+    position: fixed;
+    top: 0;
+    left: 0; /* Align with sidebar */
+    z-index: 90;
+}
+
+/* Main content styling */
+.main-content {
+    flex: 1;
+    margin-left: 20px; /* Reflect sidebar width */
+    padding-top: 60px; /* Adjusted for topbar */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    align-items: flex-start; /* Align items to the left */
+    text-align: left; /* Align text to the left */
+}
+
+/* User info and logout button */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Gap between text and button */
+    padding-right: 35px; /* Padding of 20px from the right */
+}
+
+.logout-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.logout-button:hover {
+    background-color: #c0392b;
+}
+
+/* Table styles */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    margin-top: 20px; /* Space above the table */
+    padding-left: 10px; /* Padding between the table and sidebar */
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th, .data-table td {
+    border: 1px solid #ddd; /* Light gray border */
+    padding: 8px; /* Cell padding */
+    text-align: left; /* Align text to the left */
+}
+
+.data-table th {
+    background-color: #2980b9; /* Header background color */
+    color: white; /* Header text color */
+}
+
+.data-table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Zebra striping for even rows */
+}
+
+.data-table tr:hover {
+    background-color: #ddd; /* Hover effect */
+}
+
+.data-table button {
+    margin-right: 5px; /* Space between buttons */
+    padding: 5px 10px; /* Button padding */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    background-color: #2980b9; /* Button background color */
+    color: white; /* Button text color */
+}
+
+.data-table button:hover {
+    background-color: #1a6f9e; /* Darker button color on hover */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%; /* Full width on small screens */
+        transform: translateY(-100%); /* Hidden by default */
+        height: auto; /* Adjust height for responsiveness */
+    }
+
+    .topbar {
+        width: 100%; /* Full width on small screens */
+        left: 0; /* Align left */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .main-content {
+        margin-left: 0 ; /* Remove left margin */
+        padding-top: 60px; /* Consistent with topbar height */
+    }
+}
+/* Table styles */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    margin-top: 20px; /* Space above the table */
+    padding-left: 2px !important; /* Padding between the table and sidebar set to 2px */
+}
+
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Higher z-index to overlay on top of everything */
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%; /* Make it responsive */
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.modal-content img {
+    max-width: 100%; /* Ensure the image is responsive */
+    border-radius: 4px; /* Rounded corners for the image */
+}
+/* Dashboard.css */
+
+/* Style for the Create New Product button */
+.create-product-button {
+    background-color: #28a745; /* Green color */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for top/bottom and left/right */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Transition effects */
+}
+
+.create-product-button:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+.create-product-button:focus {
+    outline: none; /* Remove outline on focus */
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white; /* Make the text color white */
+    padding: 10px;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    color: #3498db; /* Optional: Change the color when hovered */
+}

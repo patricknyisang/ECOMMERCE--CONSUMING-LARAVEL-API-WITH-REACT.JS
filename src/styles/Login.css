@@ -1,0 +1,91 @@
+/* Main container styles */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Use min-height to ensure full-screen height */
+  padding: 20px; /* Add padding around the container */
+  background-color: #f4f4f4; /* Light background */
+}
+
+/* Form styles */
+.auth-form {
+  width: 80%; /* Set the width to 80% of the screen */
+  max-width: 600px; /* Optional: limit the max width for larger screens */
+  background-color: white; /* White background for the form */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  max-height: 80vh; /* Limit the form height */
+}
+
+h2 {
+  text-align: center; /* Center the heading */
+  color: #333; /* Dark text color */
+}
+
+.form-group {
+  margin-bottom: 15px; /* Space between fields */
+}
+
+label {
+  display: block; /* Block label for input */
+  margin-bottom: 5px; /* Space below label */
+  color: #555; /* Gray text */
+}
+
+input, select {
+  width: 100%; /* Full width for inputs and selects */
+  padding: 10px; /* Same padding for inputs and selects */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+}
+
+input:focus, select:focus {
+  border-color: #2980b9; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+}
+
+.submit-button {
+  width: 100%; /* Full width button */
+  padding: 10px;
+  background-color: #2980b9; /* Blue button */
+  color: white; /* White text */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.submit-button:hover {
+  background-color: #3498db; /* Lighter blue on hover */
+}
+
+.toggle-form {
+  text-align: center; /* Center the toggle text */
+  color: #2980b9; /* Blue text */
+  cursor: pointer; /* Pointer cursor */
+  margin-top: 10px; /* Space above */
+}
+
+.toggle-form:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Style for the select dropdowns */
+select {
+  appearance: none; /* Remove default dropdown arrow */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center; /* Position custom arrow */
+  background-size: 16px; /* Size of custom arrow */
+}
+
+/* Ensure label styles are consistent */
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+}
